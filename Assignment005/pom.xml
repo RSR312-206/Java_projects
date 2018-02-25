@@ -1,0 +1,58 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>uw.cp120.assignments</groupId>
+  <artifactId>Assignment005</artifactId>
+  <version>05</version>
+  <packaging>jar</packaging>
+
+  <name>Assignment005</name>
+  <url>http://maven.apache.org</url>
+
+  <properties>
+  <student>RachelR</student>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+  <build>
+    <plugins>
+	    <plugin>
+	    <artifactId>maven-compiler-plugin</artifactId>
+	    <version>3.6.0</version>
+	    <configuration>
+	        <source>1.8</source>
+	        <target>1.8</target>
+	        <compilerArgs>
+	            <arg>-Xlint:all</arg>
+	            <arg>-Xlint:-serial</arg>
+	        </compilerArgs>
+	    </configuration>
+		</plugin>
+		<plugin>
+    <artifactId>maven-assembly-plugin</artifactId>
+    <groupId>org.apache.maven.plugins</groupId>
+    <version>3.0.0</version>
+    <configuration>
+        <finalName>${student}-${project.version}</finalName>
+        <formats>
+            <format>tar.gz</format>
+            <format>zip</format>
+        </formats>
+        <descriptorRefs>
+            <descriptorRef>project</descriptorRef>
+        </descriptorRefs>
+        <tarLongFileMode>posix</tarLongFileMode>
+    </configuration>
+ </plugin>
+    </plugins>
+</build>
+</project>
